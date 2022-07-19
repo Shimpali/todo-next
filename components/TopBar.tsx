@@ -15,7 +15,7 @@ const TopBar = () => (
       alignContent="center"
     >
       <Text
-        fontSize="36px"
+        fontSize="32px"
         fontWeight="bold"
         lineHeight="42px"
         color="#eef2f7"

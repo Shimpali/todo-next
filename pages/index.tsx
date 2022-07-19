@@ -1,8 +1,9 @@
 import { Flex } from '@chakra-ui/layout';
 import { Button } from '@chakra-ui/react';
 import type { NextPage } from 'next';
+import { signIn } from 'next-auth/react';
 import Head from 'next/head';
-import { TopBar } from '../components';
+import TopBar from '../components/TopBar';
 import styles from '../styles/Home.module.css';
 
 const Home: NextPage = () => {
@@ -14,8 +15,13 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <TopBar />
-      <Flex w={['100%', '100%', '100%', '90ch']} className={styles.main}>
-        <Button variant="solid" bg="#eef2f7" color="#172331">
+      <Flex className={styles.main}>
+        <Button
+          variant="solid"
+          bg="#eef2f7"
+          color="#172331"
+          onClick={() => signIn()}
+        >
           Get started
         </Button>
       </Flex>
