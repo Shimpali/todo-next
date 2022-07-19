@@ -1,7 +1,7 @@
 import { Flex } from '@chakra-ui/layout';
 import { Button } from '@chakra-ui/react';
 import type { NextPage } from 'next';
-import { signIn } from 'next-auth/react';
+// import { signIn } from 'next-auth/react';
 import Head from 'next/head';
 import TopBar from '../components/TopBar';
 import styles from '../styles/Home.module.css';
@@ -20,7 +20,7 @@ const Home: NextPage = () => {
           variant="solid"
           bg="#eef2f7"
           color="#172331"
-          onClick={() => signIn()}
+          // onClick={() => signIn()}
         >
           Get started
         </Button>
