@@ -31,7 +31,12 @@ const TopBar = () => {
       </Flex>
       {status === 'authenticated' && (
         <Flex marginLeft="82px">
-          <Button variant="solid" colorScheme="blue" onClick={() => signOut()}>
+          <Button
+            variant="solid"
+            bg="#eef2f7"
+            color="#172331"
+            onClick={() => signOut()}
+          >
             Sign Out
           </Button>
         </Flex>

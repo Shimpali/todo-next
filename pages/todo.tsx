@@ -1,19 +1,18 @@
-import { Button, Center, Container, Flex, Text } from '@chakra-ui/react';
+import { Center, Container, Flex, Text } from '@chakra-ui/react';
 import { GetServerSideProps } from 'next';
-import { getSession, signOut } from 'next-auth/react';
+import { getSession, useSession } from 'next-auth/react';
 import { useState } from 'react';
 import { CreateToDo, TodosContainer, TopBar } from '../components';
 import styles from '../styles/ToDoPage.module.css';
 
-import { UserSession } from './api/auth/[...nextauth]';
-
-const ToDoPage = ({ session }: { session: UserSession }) => {
+const ToDoPage = () => {
   const [refreshTodoToken, setRefreshTodoToken] = useState<string>('');
+  const { data: session } = useSession();
 
   return (
     <div className={styles.container}>
       <TopBar />
-      <Container py="64px">
+      <Container py="64px" w={'100%'}>
         <Center>
           <Flex flexDirection="column">
             <Text mb="24px">👋 Hello {session?.user?.name}</Text>

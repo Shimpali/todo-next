@@ -1,15 +1,15 @@
 import { AddIcon } from '@chakra-ui/icons';
 import { Flex, Heading, IconButton, Input } from '@chakra-ui/react';
 import axios from 'axios';
-import React from 'react';
+import React, { useState } from 'react';
 
 type CreateToDoProps = {
   onTodoCreated: () => void;
 };
 
 const CreateToDo: React.FC<CreateToDoProps> = ({ onTodoCreated }) => {
-  const [title, setTitle] = React.useState('');
-  const [isLoading, setLoading] = React.useState(false);
+  const [title, setTitle] = useState('');
+  const [isLoading, setLoading] = useState(false);
 
   const onCreate = () => {
     setLoading(true);
@@ -32,7 +32,7 @@ const CreateToDo: React.FC<CreateToDoProps> = ({ onTodoCreated }) => {
       </Heading>
       <Flex>
         <Input
-          placeholder="Something to do..."
+          placeholder="Add Something to do..."
           onChange={e => setTitle(e.target.value)}
         />
         <IconButton
