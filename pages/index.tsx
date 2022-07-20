@@ -39,7 +39,7 @@ export async function getServerSideProps(
   if (session) {
     return {
       redirect: {
-        destination: '/logged',
+        destination: '/todo',
         permanent: false
       }
     };
