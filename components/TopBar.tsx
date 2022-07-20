@@ -1,9 +1,9 @@
 import { Flex, Text } from '@chakra-ui/layout';
 import { Button } from '@chakra-ui/react';
-import { GetSessionParams, getSession, useSession, signOut } from 'next-auth/react';
+import { useSession, signOut } from 'next-auth/react';
 
 const TopBar = () => {
-  const { data: session, status } = useSession();
+  const { status } = useSession();
 
   return (
     <Flex
