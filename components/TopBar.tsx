@@ -7,7 +7,7 @@ const TopBar = () => (
     alignContent="center"
     p="8px 16px"
     justifyContent="center"
-    bg="#091932"
+    bg="#172331"
   >
     <Flex
       w={['100%', '100%', '100%', '90ch']}

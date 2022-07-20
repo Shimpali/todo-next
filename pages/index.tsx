@@ -1,7 +1,7 @@
 import { Flex } from '@chakra-ui/layout';
 import { Button } from '@chakra-ui/react';
 import type { NextPage } from 'next';
-// import { signIn } from 'next-auth/react';
+import { getSession, GetSessionParams, signIn } from 'next-auth/react';
 import Head from 'next/head';
 import TopBar from '../components/TopBar';
 import styles from '../styles/Home.module.css';
@@ -20,7 +20,7 @@ const Home: NextPage = () => {
           variant="solid"
           bg="#eef2f7"
           color="#172331"
-          // onClick={() => signIn()}
+          onClick={() => signIn()}
         >
           Get started
         </Button>
@@ -30,3 +30,22 @@ const Home: NextPage = () => {
 };
 
 export default Home;
+
+export async function getServerSideProps(
+  context: GetSessionParams | undefined
+) {
+  const session = await getSession(context);
+
+  if (session) {
+    return {
+      redirect: {
+        destination: '/logged',
+        permanent: false
+      }
+    };
+  }
+
+  return {
+    props: {}
+  };
+}
